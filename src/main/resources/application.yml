@@ -1,0 +1,30 @@
+# 访问项目的时候需要加上下面的这个路径
+server:
+  port: 8081
+  servlet:
+    context-path: /wanglichao
+#配置数据库信息
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/vueblog?characterEncoding=UTF-8
+    username: scott
+    password: tiger
+    driver-class-name: com.mysql.jdbc.Driver
+
+# 配置mybatis plus 的mapper 的xml 文件的扫描路径
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+markerhub:
+  jwt:
+    # 加密秘钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token有效时长，7天，单位秒
+    expire: 604800
+    header: Authorization
+
+
